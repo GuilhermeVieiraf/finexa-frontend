@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+}
+
+.cabecalho-principal {
+    background-color: rgb(71, 71, 235);
+    padding: 20px 0;
+    color: white;
+}
+
+.cabecalho-principal .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho-principal nav ul {
+    display: flex;
+    gap: 45px;
+    
+    list-style: none;
+    padding-inline: 0;
+    margin: 0;
+}
