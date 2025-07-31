@@ -1,28 +1,142 @@
 body {
     margin: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: rgb(66, 66, 201);
 }
 
 .cabecalho-principal {
-    background-color: rgb(71, 71, 235);
     padding: 20px 0;
-    color: white;
+    color: black;
+    min-height: 80px;
+}
+
+.cabecalho-principal .container img {
+    display: block;
+    height: 40px;      
+    object-fit: contain;
+    margin-right: 0;
+    align-self: center;
 }
 
 .cabecalho-principal .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    gap: 32px;
+    max-width: 1200px;   /* Limita a largura máxima */
+    margin: 0 auto;      /* Centraliza o container */
+    width: 90%;          /* Deixa uma margem lateral */
+}
+
+.cabecalho-principal .container nav {
+    display: flex;
     align-items: center;
 }
 
 .cabecalho-principal nav ul {
     display: flex;
+    align-items: center;
     gap: 45px;
-    
     list-style: none;
     padding-inline: 0;
     margin: 0;
 }
+
+.cabecalho-principal a {
+    color: inherit;         
+    text-decoration: none;  
+    display: inline-block;
+    position: relative;
+}
+
+/* Efeito sublinhado animado */
+.cabecalho-principal a:not([href="#fazercadastro"]):after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s;
+}
+
+.cabecalho-principal a:not([href="#fazercadastro"]):hover:after {
+    width: 100%;
+}
+
+/* Remove outros efeitos do hover geral */
+.cabecalho-principal a:hover {    
+    background-color: transparent;
+    text-decoration: none;
+    transform: none;
+    transition: none;
+}
+
+
+.cabecalho-principal a[href="#fazercadastro"] {
+    color: blue;
+    background-color: white;
+    padding: 6px 14px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: none;
+}
+.cabecalho-principal a[href="#fazercadastro"]:hover {
+    background-color: #e0e0e0; /* branco mais escuro */
+    color: blue;
+    box-shadow: 0 0 8px 2px rgba(66, 66, 201, 0.10);
+    text-decoration: none;
+    transform: none;
+}
+
+.cabecalho-principal a[href="/"]:hover,
+.cabecalho-principal a[href="/"]:after {
+    background-color: transparent !important;
+    text-decoration: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+    width: 0 !important;
+}
+
+.cabecalho-principal a[href="/"] {
+    overflow: hidden;
+}
+
+/* Não aplique o efeito sublinhado na logo */
+.cabecalho-principal a:not([href="#fazercadastro"]):not([href="/"]):after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s;
+}
+
+.cabecalho-principal a:not([href="#fazercadastro"]):not([href="/"]):hover:after {
+    width: 100%;
+}
+
+/* Efeito sublinhado animado apenas nos menus */
+.cabecalho-principal nav:not(:first-child) a:not([href="#fazercadastro"]):after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s;
+}
+
+.cabecalho-principal nav:not(:first-child) a:not([href="#fazercadastro"]):hover:after {
+    width: 100%;
+}
+
